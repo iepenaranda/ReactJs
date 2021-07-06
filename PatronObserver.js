@@ -45,10 +45,9 @@ class NumberExampleEnglish {
 }
 
 let numberExample = new NumberExample();
-let nee = new NumberExampleEnglish();
 
 numberExample.subscribe(new NumberExampleSpanish());
-numberExample.subscribe(nee);
+numberExample.subscribe(new NumberExampleEnglish());
 
 numberExample.increment();
 numberExample.increment();

@@ -20,7 +20,7 @@ class Observable {
 
   /* Por cada observador que este en el arreglo se imprime un mensaje/notificación 
   del estado del observable */
-  notifyObserver(message) {
+  notifyObservable(message) {
     this.observers.forEach((observer) => {
       observer.notify(message);
     });
@@ -37,19 +37,19 @@ class exampleFruits extends Observable {
   // Metodo que guarda la fruta que se haya pasado como argumento en el arreglo fruits.
   addFruit(fruit) {
     this.fruits.push(fruit);
-    this.notifyObserver(this.fruits);
+    this.notifyObservable(this);
   }
 }
 
 class englishNotify {
   notify(message) {
-    console.log(`Your fruits are: ${message}`);
+    console.log(`Your fruits are: ${message.fruits}`);
   }
 }
 
 class spanishNotify {
   notify(message) {
-    console.log(`Tus frutas son: ${message}`);
+    console.log(`Tus frutas son: ${message.fruits}`);
   }
 }
 
