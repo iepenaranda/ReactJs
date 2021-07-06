@@ -34,6 +34,7 @@ class Observable {
 }
 
 class myTest extends Observable{
+  // En este caso hay dos variables numericas que voy a ir cambiando
   constructor(){
     super();
     this.minVal = -1;
@@ -47,12 +48,14 @@ class myTest extends Observable{
   }
 }
 
+// Me mostrara el valor de las variables en ese momento
 class valueNotify {
   notify(message) {
     console.log(`El mayor valor es ${message.maxVal} y el menor valor es ${message.minVal}`);
   }
 }
 
+// Me mostrara la diferencia entre las variables
 class relationNotify {
   notify(message) {
     console.log(`La diferencia entre estos valores es de: ${message.maxVal - message.minVal}`);
