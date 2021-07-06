@@ -1,31 +1,30 @@
-export class Observable {
+class Observable {
   /* El contructor es lo que se crea cuando uno realiza una instancia de la clase.
     En este caso, al instanciar una clase Observer secreará una arreglo observers vacio */
   constructor() {
-    this.observers = [];
+    this.subscriptors = [];
   }
 
   /* Metodo subscribe el cuál agregará el elemento que se le pase como argumento
     al arreglo observers de la clase. */
-  subscribe(notification) {
-    this.observers.push(notification);
+  subscribe(sub) {
+    this.subscriptors.push(sub);
   }
 
   // Elimina del arreglo observers las suscripción que se pase como argumento
-  unsubscribe(notification) {
-    this.observers = this.observers.filter(
-      (observer) => observer instanceof notification !== true
-    );
+  unsubscribe(sub) {
+    this.subscriptors = this.subscriptors.filter((item) => item !== sub)
   }
 
   /* Por cada observador que este en el arreglo se imprime un mensaje/notificación 
     del estado del observable */
-  notifyObservable(message) {
-    this.observers.forEach((observer) => {
-      observer.notify(message);
+    notifyObservable(message) {
+    this.subscriptors.forEach((item) => {
+      item.notify(message);
     });
   }
 }
+
 // Clase observable que se utilizará para almacenar frutas
 class exampleFruits extends Observable {
   constructor() {
@@ -41,18 +40,12 @@ class exampleFruits extends Observable {
 }
 
 class englishNotify {
-  constructor() {
-    this.name = "eng";
-  }
   notify(message) {
     console.log(`Your fruits are: ${message.fruits}`);
   }
 }
 
 class spanishNotify {
-  constructor() {
-    this.name = "spa";
-  }
   notify(message) {
     console.log(`Tus frutas son: ${message.fruits}`);
   }
