@@ -2,31 +2,30 @@ class Observable {
   /* El contructor es lo que se crea cuando uno realiza una instancia de la clase.
     En este caso, al instanciar una clase Observer secreará una arreglo observers vacio */
   constructor() {
-    this.subscriptors = [];
+    this.observers = [];
   }
 
-  /* Metodo subscribe el cuál agregará el elemento que se le pase como argumento
-    al arreglo observers de la clase. */
+  /* Metodo subscribe el cuál agregará un "observador" al arreglo observers */
   subscribe(sub) {
-    this.subscriptors.push(sub);
+    this.observers.push(sub);
   }
 
-  // Elimina del arreglo observers las suscripción que se pase como argumento
+  // Elimina del arreglo observers la suscripción del "observer" que se paso como argumento
   unsubscribe(sub) {
-    this.subscriptors = this.subscriptors.filter((item) => item !== sub)
+    this.observers = this.observers.filter((item) => item !== sub)
   }
 
-  /* Por cada observador que este en el arreglo se imprime un mensaje/notificación 
+  /* Por cada "observador" que exista en observer se imprime un mensaje/notificación 
     del estado del observable */
     notifyObservable(message) {
-    this.subscriptors.forEach((item) => {
+    this.observers.forEach((item) => {
       item.notify(message);
     });
   }
 }
 
+// Observable que manejara dos variables númericas
 class myTest extends Observable{
-  // En este caso hay dos variables numericas que voy a ir cambiando
   constructor(){
     super();
     this.minVal = -1;
@@ -40,14 +39,14 @@ class myTest extends Observable{
   }
 }
 
-// Me mostrara el valor de las variables en ese momento
+// Oservador que informara sobre el estado de las variable numericas del observable
 class valueNotify {
   notify(message) {
     console.log(`El mayor valor es ${message.maxVal} y el menor valor es ${message.minVal}`);
   }
 }
 
-// Me mostrara la diferencia entre las variables
+// Oservador que notificará sobre la diferencia entre las variables.
 class relationNotify {
   notify(message) {
     console.log(`La diferencia entre estos valores es de: ${message.maxVal - message.minVal}`);
