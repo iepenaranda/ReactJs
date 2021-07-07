@@ -1,28 +1,27 @@
-export class Observable {
+class Observable {
   /* El contructor es lo que se crea cuando uno realiza una instancia de la clase.
-    En este caso, al instanciar una clase Observer secreará una arreglo observers vacio */
+      En este caso, al instanciar una clase Observable se creará un arreglo de observers vacio */
   constructor() {
     this.observers = [];
   }
 
-  /* Metodo subscribe el cuál agregará el elemento que se le pase como argumento
-    al arreglo observers de la clase. */
-  subscribe(notification) {
-    this.observers.push(notification);
+  /* Metodo que agrega un "observador" al arreglo observers */
+  subscribe(sub) {
+    this.observers.push(sub);
   }
 
-  // Elimina del arreglo observers las suscripción que se pase como argumento
-  unsubscribe(notification) {
-    this.observers = this.observers.filter(
-      (observer) => observer instanceof notification !== true
-    );
+  // Elimina del arreglo observers la suscripción del "observador" que se paso como argumento
+  unsubscribe(sub) {
+    this.observers = this.observers.filter((item) => item !== sub);
   }
 
-  /* Por cada observador que este en el arreglo se imprime un mensaje/notificación 
-    del estado del observable */
+  /* Por cada "observador" que exista en observer se imprime un mensaje/notificación 
+      del estado del observable */
   notifyObservable(message) {
-    this.observers.forEach((observer) => {
-      observer.notify(message);
+    this.observers.forEach((item) => {
+      item.notify(message);
     });
   }
 }
+
+module.exports = Observable;
