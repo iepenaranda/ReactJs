@@ -74,44 +74,23 @@ let elements = React.createElement(
       null,
       React.createElement("h2", { id: "Nolan" }, "Christopher Nolan")
     ),
+
     React.createElement(
       "div",
       null,
       React.createElement(
         "div",
-        { className: "movies" },
-        React.createElement(
-          "div",
-          { className: "movie card", style: { width: "18rem" } },
-          React.createElement("img", {
-            className: "card-img-top",
-            src: nolan[0].img,
-          }),
-          React.createElement("h3", null, nolan[0].name),
-          React.createElement("p", { className: "card-text" }, nolan[0].plot)
-        ),
-        React.createElement(
-          "div",
-          { className: "movie card", style: { width: "18rem" } },
-          React.createElement("img", {
-            className: "card-img-top",
-            src: nolan[1].img,
-          }),
-          React.createElement("h3", null, nolan[1].name),
-          React.createElement("p", { className: "card-text" }, nolan[1].plot)
-        ),
-        React.createElement(
-          "div",
-          { className: "movie card", style: { width: "18rem" } },
-          React.createElement("img", {
-            className: "card-img-top",
-            src: nolan[2].img,
-          }),
-          React.createElement("h3", null, nolan[2].name),
-          React.createElement("p", { className: "card-text" }, nolan[2].plot)
+        {className: "movies"},
+        nolan.map((mov, i) => 
+          React.createElement("div", {key:"card1"+i, className: "movie card", style: { width: "18rem" }},
+          React.createElement("img", {key:"img1"+i, className: "card-img-top", src: mov.img}),
+          React.createElement("h3", {key: "name1"+i}, mov.name),
+          React.createElement("p", {key:"plot1"+i}, mov.plot)
+          )
         )
       )
-    )
+    ),
+
   ),
 
   React.createElement(
@@ -128,39 +107,16 @@ let elements = React.createElement(
       null,
       React.createElement(
         "div",
-        { className: "movies" },
-        React.createElement(
-          "div",
-          { className: "movie card", style: { width: "18rem" } },
-          React.createElement("img", {
-            className: "card-img-top",
-            src: fincher[0].img,
-          }),
-          React.createElement("h3", null, fincher[0].name),
-          React.createElement("p", { className: "card-text" }, fincher[0].plot)
-        ),
-        React.createElement(
-          "div",
-          { className: "movie card", style: { width: "18rem" } },
-          React.createElement("img", {
-            className: "card-img-top",
-            src: fincher[1].img,
-          }),
-          React.createElement("h3", null, fincher[1].name),
-          React.createElement("p", { className: "card-text" }, fincher[1].plot)
-        ),
-        React.createElement(
-          "div",
-          { className: "movie card", style: { width: "18rem" } },
-          React.createElement("img", {
-            className: "card-img-top",
-            src: fincher[2].img,
-          }),
-          React.createElement("h3", null, fincher[2].name),
-          React.createElement("p", { className: "card-text" }, fincher[2].plot)
+        {className: "movies"},
+        fincher.map((mov, i) => 
+          React.createElement("div", {key:"card1"+i, className: "movie card", style: { width: "18rem" }},
+          React.createElement("img", {key:"img1"+i, className: "card-img-top", src: mov.img}),
+          React.createElement("h3", {key: "name1"+i}, mov.name),
+          React.createElement("p", {key:"plot1"+i}, mov.plot)
+          )
         )
       )
-    )
+    ),
   ),
 
   React.createElement("div", null, 
