@@ -21,7 +21,7 @@ Al igual que con angular, sep uede utilizar __npm__ para la correcta instalació
 5. Finalmete para crear el servidor ejecutamos la instrucción: `npm start`
 
 #### Configración de la creación de proyectos
-* Para poder establecer un comando para generar un proyecto en React se usa:
+Para poder establecer un comando para generar un proyecto en React se usa:
 
 `npm install -g create-react-app`
 
