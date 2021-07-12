@@ -1,11 +1,11 @@
 # ReactJs
 Repository used to store all the stuff related with ReactJS learned in the KeyCode's course.
 
-React.JS es una librería front-edn basada en Javascript para crear interfaces y otro componentes de UI, es mantenida por Facebook.
+React.JS es una librería frontend basada en Javascript para crear interfaces y otro componentes de UI, es mantenida por Facebook.
 ___
 
 ## Inicializar un proyecto de React.JS
-La estructura básica de un proyecto front-end en React consiste en las carpetas: public y src. En __public__ se almacenaran todoas las archivos html, css y otros elementos necesarios como imagenes o documentos que se requieran en la aplicación. En la carpeta __src__ se almacenaran los archivos __.jsx__ necesarios para el funcionamineto y renderización de la aplicación.
+La estructura básica de un proyecto frontend en React consiste en las carpetas: public y src. En __public__ se almacenaran todoas las archivos html, css y otros elementos necesarios como imagenes o documentos que se requieran en la aplicación. En la carpeta __src__ se almacenaran los archivos __.jsx__ necesarios para el funcionamineto y renderización de la aplicación.
 
 #### Librerias de React.
 Al igual que con angular, sep uede utilizar __npm__ para la correcta instalación de los librerias necesarias. Los pasos para hacer esto serían:
@@ -18,4 +18,14 @@ Al igual que con angular, sep uede utilizar __npm__ para la correcta instalació
 
 `"scripts": { "start": "snowpack dev", "build": "snowpack build"}`
 
-5. Finalmete para crear el servidor ejcutamos la instrucción: `npm start`
+5. Finalmete para crear el servidor ejecutamos la instrucción: `npm start`
+
+#### Configración de la creación de proyectos
+* Para poder establecer un comando para generar un proyecto en React se usa:
+
+`npm install -g create-react-app`
+
+`create-react-app <nombre del proyecto>`
+
+`npm start`
+
