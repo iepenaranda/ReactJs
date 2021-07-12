@@ -26,6 +26,3 @@ Para poder establecer un comando para generar un proyecto en React se usa:
 1. `npm install -g create-react-app`
 
 2. `create-react-app <nombre del proyecto>`
-
-3. `npm start`
-
