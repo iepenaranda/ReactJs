@@ -26,3 +26,6 @@ Para poder establecer un comando para generar un proyecto en React se usa:
 1. `npm install -g create-react-app`
 
 2. `create-react-app <nombre del proyecto>`
+
+___
+`npm i react-router-dom`: Es una lirería de React usada para la gestión de rutas dentro de la aplicación.
